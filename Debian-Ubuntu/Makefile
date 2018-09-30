@@ -72,10 +72,10 @@ init:
 	@mkdir $(TEST_DIR) -p || true
 
 	@touch .gitignore
-	@echo "bin/" >> .gitignore
-	@echo "obj/" >> .gitignore
-	@echo "doc/" >> .gitignore
-	@echo "lib/" >> .gitignore 
+	@echo "$(BIN_DIR)/" >> .gitignore
+	@echo "$(OBJ_DIR)/" >> .gitignore
+	@echo "$(DOC_DIR)/" >> .gitignore
+	@echo "$(LIB_DIR)/" >> .gitignore 
 
 .PHONY: cross-build
 cross-build:
