@@ -11,7 +11,7 @@ Makefile for C++ projects.
 6. Write your C++ code in the `/src` directory and unit tests in the `/test` directory.
 7. Compile for your local-machine with `make build` and then run it with `make run`
 8. Compile and run unit-tests from the `/test` directory using `make test`.
-9. To compile to otvher platforms
+9. To compile to other platforms
     1. First check [Dockcross](https://hub.docker.com/u/dockcross/) to see if they have the correct image.
     2. Invoke `make cross-build img=<name>` where "< name >" is the name of the dockcross image (without author).
         - example for windows 64bit: dockcross/windows-x64 is the image and the command is `make cross-build img=windows-x64`
