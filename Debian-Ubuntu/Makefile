@@ -73,6 +73,7 @@ init:
 
 	@touch .gitignore
 	@echo "bin/" >> .gitignore
+	@echo "obj/" >> .gitignore
 	@echo "doc/" >> .gitignore
 	@echo "lib/" >> .gitignore 
 
