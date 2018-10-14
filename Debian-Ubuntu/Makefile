@@ -11,7 +11,7 @@ TEST_DIR = test
 EXE_NAME = bin
 
 COMPILER = $(CXX)
-COMPILE_FLAGS = -g -std=c++17 -static
+COMPILE_FLAGS = -Wall -g -std=c++17 -static
 
 .DEFAULT_GOAL := build
 
@@ -38,7 +38,7 @@ COMPILE_TEST = $(SOURCES_TEST:.cpp=.o) $(SOURCES_TEST:.c=.o)
 BASENAME_TEST = $(subst /,., $(SOURCES_TEST))
 LINKLIST_TEST = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(BASENAME_TEST))
 
-BIN_NAME = $(EXE_NAME)-$(notdir $(DEFAULT_DOCKCROSS_IMAGE))
+BIN_NAME = $(EXE_NAME)-$(if $(DEFAULT_DOCKCROSS_IMAGE),$(DEFAULT_DOCKCROSS_IMAGE),default)
 
 .cpp.o:
 	@$(COMPILER) $(COMPILE_FLAGS) -c $< -o $(OBJ_DIR)/$(subst /,.,$@) 
